@@ -229,3 +229,11 @@ CC0 - Public Domain
 ERC-8004 is a community effort coordinated by Marco De Rossi (MetaMask) and Davide Crapis (EF), with the co-authorship of Jordan Ellis (Google) and Erik Reppel (Coinbase). Our core team is joined by Leonard Tan (MetaMask), Vitto Rivabella (EF), and Isha Sangani (EF).
 
 Check out our website at [8004.org](https://www.8004.org) and reach out at `team@8004.org`.
+
+---
+
+## License
+
+<!-- TODO: Confirm and add license. See https://choosealicense.com/ -->
+> ⚠️ License not yet specified in README. Please add a LICENSE file and update this section.
+
