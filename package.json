@@ -46,6 +46,11 @@
     "viem": "^2.38.0"
   },
   "type": "module",
+  "overrides": {
+    "@actions/http-client": {
+      "undici": "^6.28.0"
+    }
+  },
   "dependencies": {
     "@openzeppelin/contracts": "^5.4.0",
     "@safe-global/safe-singleton-factory": "^2.0.0",
