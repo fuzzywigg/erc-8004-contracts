@@ -58,17 +58,28 @@ Install dependencies:
 npm install
 ```
 
-Run tests:
+Create a `.env` with RPC URLs. Hardhat 3 validates all configured network URLs at startup, so these must be set even for local compilation and testing — placeholder values are fine if you only run the local suite:
+
+```shell
+SEPOLIA_RPC_URL=https://rpc.example.invalid
+MAINNET_RPC_URL=https://rpc.example.invalid
+```
+
+Compile the contracts (the `npm test` scripts invoke Node's test runner directly and do **not** compile for you):
+
+```shell
+npx hardhat compile
+```
+
+Run the test suite (79 tests: 61 core + 18 upgradeable):
 
 ```shell
 npm test
 ```
 
-Or via Hardhat:
-
-```shell
-npx hardhat test
-```
+> **Note**
+>
+> `npx hardhat test` additionally picks up `test/local.ts`, which expects a local node to be running (`npm run node` in another terminal). On a fresh clone without a node, it will fail with a connection error to `localhost:8545` — use `npm test` for the standard suite.
 
 ## Core concepts (from the spec)
 
@@ -229,11 +240,4 @@ CC0 - Public Domain
 ERC-8004 is a community effort coordinated by Marco De Rossi (MetaMask) and Davide Crapis (EF), with the co-authorship of Jordan Ellis (Google) and Erik Reppel (Coinbase). Our core team is joined by Leonard Tan (MetaMask), Vitto Rivabella (EF), and Isha Sangani (EF).
 
 Check out our website at [8004.org](https://www.8004.org) and reach out at `team@8004.org`.
-
----
-
-## License
-
-<!-- TODO: Confirm and add license. See https://choosealicense.com/ -->
-> ⚠️ License not yet specified in README. Please add a LICENSE file and update this section.
 
