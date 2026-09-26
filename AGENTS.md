@@ -26,6 +26,10 @@ ERC-8004 is the foundational layer for quantum-resistant identity and attestatio
 ## How to run
 ```bash
 npm install
-npx hardhat test
+npm test              # core + upgradeable (no local node required)
 npx hardhat node      # local testnet
+# After vanity deploy (`npm run local` against that node):
+npm run local:test    # test/local.ts — needs localhost:8545
 ```
+
+Note: bare `npx hardhat test` also loads `test/local.ts` and fails with HHE703 unless a local node (and vanity deploy) is already up. Prefer `npm test` for the default suite.
