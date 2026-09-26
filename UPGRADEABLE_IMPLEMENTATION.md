@@ -85,8 +85,8 @@ scripts/
 └── find-vanity-salts-parallel.ts           # Find salts for vanity addresses
 
 test/
-├── core.ts                                 # Core contract tests (49 tests)
-└── upgradeable.ts                          # Upgradeable-specific tests (27 tests)
+├── core.ts                                 # Core contract tests (61 tests)
+└── upgradeable.ts                          # Upgradeable-specific tests (18 tests)
 ```
 
 ## Deployment
@@ -213,8 +213,8 @@ npm run test
 ```
 
 Runs both test suites:
-- `test/core.ts` - 49 tests for core functionality
-- `test/upgradeable.ts` - 27 tests for upgradeable-specific behavior
+- `test/core.ts` - 61 tests for core functionality
+- `test/upgradeable.ts` - 18 tests for upgradeable-specific behavior
 
 ## Version Management
 
