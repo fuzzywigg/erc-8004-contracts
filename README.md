@@ -64,10 +64,12 @@ Run tests:
 npm test
 ```
 
-Or via Hardhat:
+That runs `test/core.ts` and `test/upgradeable.ts` (no local node required). Do **not** treat `npx hardhat test` as an equivalent quickstart: Hardhat discovers every file under `test/`, including `test/local.ts`, which connects to `localhost:8545` and expects the vanity deployment. For that suite, start a node, deploy, then run:
 
 ```shell
-npx hardhat test
+npx hardhat node          # terminal 1
+npm run local             # terminal 2 — factory + vanity deploy/upgrade/verify
+npm run local:test        # against the local vanity addresses
 ```
 
 ## Core concepts (from the spec)
