@@ -121,7 +121,7 @@ Creates 3 signed transactions (nonces 0, 1, 2) that upgrade each proxy to its re
 
 Comprehensive verification:
 1. Proxy addresses have code
-2. Contract versions are correct (1.1.0)
+2. Contract versions are correct (2.0.0)
 3. Ownership is correct
 4. Implementation addresses are correct
 5. Cross-registry references work (ReputationRegistry/ValidationRegistry -> IdentityRegistry)

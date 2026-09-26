@@ -168,7 +168,7 @@ This allows the value to persist when upgrading from MinimalUUPS to real impleme
 - Inherits from `Initializable`, `ERC721URIStorageUpgradeable`, `OwnableUpgradeable`, `UUPSUpgradeable`
 - Uses `initialize()` instead of constructor
 - Constructor includes `_disableInitializers()` to prevent direct initialization
-- Added `getVersion()` function for version tracking (currently `1.1.0`)
+- Added `getVersion()` function for version tracking (currently `2.0.0`)
 - Added `_authorizeUpgrade()` for owner-only upgrades
 
 ### ReputationRegistryUpgradeable
@@ -222,7 +222,7 @@ Each upgradeable contract includes a `getVersion()` function:
 
 ```solidity
 function getVersion() external pure returns (string memory) {
-    return "1.1.0";
+    return "2.0.0";
 }
 ```
 
