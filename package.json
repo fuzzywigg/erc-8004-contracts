@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretest": "npx hardhat compile",
     "test:core": "node --import tsx --test test/core.ts",
     "test:upgradeable": "node --import tsx --test test/upgradeable.ts",
     "test": "npm run test:core && npm run test:upgradeable",
