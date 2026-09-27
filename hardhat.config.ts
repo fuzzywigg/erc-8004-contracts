@@ -79,23 +79,39 @@ const config: HardhatUserConfig = {
       type: "edr-simulated",
       chainType: "op",
     },
-    sepolia: {
-      type: "http",
-      chainType: "l1",
-      url: process.env.SEPOLIA_RPC_URL || "",
-      accounts: process.env.SEPOLIA_PRIVATE_KEY ? [process.env.SEPOLIA_PRIVATE_KEY] : [],
-    },
-    mainnet: {
-      type: "http",
-      chainType: "l1",
-      url: process.env.MAINNET_RPC_URL || "",
-      accounts: process.env.MAINNET_PRIVATE_KEY ? [process.env.MAINNET_PRIVATE_KEY] : [],
-    },
+    // Only register HTTP networks when RPC URLs are set so `npm test` works
+    // without deploy secrets (Hardhat rejects empty-string URLs).
+    ...(process.env.SEPOLIA_RPC_URL
+      ? {
+          sepolia: {
+            type: "http" as const,
+            chainType: "l1" as const,
+            url: process.env.SEPOLIA_RPC_URL,
+            accounts: process.env.SEPOLIA_PRIVATE_KEY
+              ? [process.env.SEPOLIA_PRIVATE_KEY]
+              : [],
+          },
+        }
+      : {}),
+    ...(process.env.MAINNET_RPC_URL
+      ? {
+          mainnet: {
+            type: "http" as const,
+            chainType: "l1" as const,
+            url: process.env.MAINNET_RPC_URL,
+            accounts: process.env.MAINNET_PRIVATE_KEY
+              ? [process.env.MAINNET_PRIVATE_KEY]
+              : [],
+          },
+        }
+      : {}),
     baseSepolia: {
       type: "http",
       chainType: "op",
       url: process.env.BASE_SEPOLIA_RPC_URL || "https://sepolia.base.org",
-      accounts: process.env.BASE_SEPOLIA_PRIVATE_KEY ? [process.env.BASE_SEPOLIA_PRIVATE_KEY] : [],
+      accounts: process.env.BASE_SEPOLIA_PRIVATE_KEY
+        ? [process.env.BASE_SEPOLIA_PRIVATE_KEY]
+        : [],
     },
   },
 };
