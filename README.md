@@ -58,7 +58,7 @@ Install dependencies:
 npm install
 ```
 
-Create a `.env` with RPC URLs. Hardhat 3 validates all configured network URLs at startup, so these must be set even for local compilation and testing — placeholder values are fine if you only run the local suite:
+Local compile/test needs no RPC env. For `--network sepolia` or `--network mainnet`, set the matching RPC URL in `.env` first — those networks are only registered when the var is set, so without it Hardhat reports "network not found":
 
 ```shell
 SEPOLIA_RPC_URL=https://rpc.example.invalid
