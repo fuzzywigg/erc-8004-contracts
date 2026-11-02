@@ -105,6 +105,8 @@ npm run local
 
 ### Quick Start (Testnet/Mainnet)
 
+For `--network sepolia` / `--network mainnet`, set `SEPOLIA_RPC_URL` / `MAINNET_RPC_URL` in `.env` first (see README).
+
 ```bash
 # 1. Deploy CREATE2 factory (if needed)
 npx hardhat run scripts/deploy-create2-factory.ts --network <network>

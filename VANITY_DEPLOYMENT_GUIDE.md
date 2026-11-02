@@ -27,6 +27,7 @@ Owner:              0x547289319C3e6aedB179C0b8e8aF0B5ACd062603
 - SAFE Singleton Factory at `0x914d7Fec6aaC8cd542e72Bca78B30650d45643d7`
   - Already deployed on mainnet/testnets
   - For localhost: deploy via `scripts/deploy-create2-factory.ts`
+- For `--network sepolia` / `--network mainnet`, set `SEPOLIA_RPC_URL` / `MAINNET_RPC_URL` in `.env` first (those networks register only when set)
 - `OWNER_PRIVATE_KEY` in `.env` for generating pre-signed transactions
 
 ## Files Involved
